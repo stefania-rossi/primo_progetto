@@ -12,3 +12,17 @@ def lista(request):
 
 def chi_siamo(request):
     return render(request, "prima_app/chi_siamo.html")
+
+def variabili(request):
+    context = {
+        'var1': 'Prima variabile',
+        'var2': 'Seconda variabile',
+        'var3': 'Terza varibiabile'
+        #se ci sono variabili da passare all'html si crea un oggetto per gestirle meglio e + leeggibile
+    }
+    return render(request, "variabili.html" ,context)
+
+
+def index(request):
+    return render(request, "prima_app/index.html")
+
