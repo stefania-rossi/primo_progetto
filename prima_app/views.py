@@ -20,7 +20,7 @@ def variabili(request):
         'var3': 'Terza varibiabile'
         #se ci sono variabili da passare all'html si crea un oggetto per gestirle meglio e + leeggibile
     }
-    return render(request, "variabili.html" ,context)
+    return render(request, "prima_app/variabili.html" ,context)
 
 
 def index(request):
