@@ -23,3 +23,6 @@ def es_for(request):
         'my_dict' : {'chiave1': 'Valore 1', 'chiave2': 'Valore 2'}
     }
     return render(request, "es_for.html", context)
+
+def index_2(request):
+    return render(request, "seconda_app/index_2.html")

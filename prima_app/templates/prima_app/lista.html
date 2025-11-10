@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lista</title>
-</head>
-<body>
-    <h1>lista</h1>  
+{%extends "base.html"%}
+
+{%block  title%} {{block.super}} | Lista {%endblock title%}
+
+{%block content%}
+   <h1>lista</h1>  
     <ol>
         <li>Primo</li>
         <li>Secondo</li>
         <li>Terzo</li>
     </ol>
-</body>
-</html>
+{%endblock content%}

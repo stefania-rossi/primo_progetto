@@ -10,3 +10,4 @@ urlpatterns=[
     path('variabili',variabili,name='variabili'),
     path('',index,name='index'),
 ]
+
