@@ -40,5 +40,4 @@ def articoloDetailView(request, pk):
    return HttpResponse("<h1>" + response + "</h1>")
 """
 
-
       
