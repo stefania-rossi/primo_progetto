@@ -9,11 +9,7 @@ class Giornalista(models.Model):
     
     class Meta:
         verbose_name = "Giornalista"
-<<<<<<< HEAD
-        verbose_name_plural="Giornalisti"
-=======
         verbose_name_plural = "Giornalisti"
->>>>>>> 13442e257a256d8cee4996614c7023cc184b02ff
 
 class Articolo(models.Model):
     titolo = models.CharField(max_length=100)
@@ -22,14 +18,7 @@ class Articolo(models.Model):
 
     def __str__(self):
         return self.titolo
-<<<<<<< HEAD
-    
-    class Meta:
-        verbose_name="Articolo"
-        verbose_name_plural="Articoli"
-=======
 
     class Meta:
         verbose_name = "Articolo"
         verbose_name_plural = "Articoli"
->>>>>>> 13442e257a256d8cee4996614c7023cc184b02ff
