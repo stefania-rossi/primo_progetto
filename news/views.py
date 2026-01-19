@@ -40,6 +40,7 @@ def articoloDetailView(request, pk):
    return HttpResponse("<h1>" + response + "</h1>")
 """
 
+<<<<<<< HEAD
 def listaArticoli(request, pk=None):
     trovato = False
     is_vuota = False
@@ -59,3 +60,6 @@ def listaArticoli(request, pk=None):
 
 def index4(request):
     return render(request, "index4.html")
+=======
+      
+>>>>>>> 13442e257a256d8cee4996614c7023cc184b02ff
