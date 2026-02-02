@@ -16,6 +16,11 @@ def articoloDetailView(request, pk):
     context = {"articolo":articolo}
     return render(request, "news/articolo_detail.html", context)
    
+def giornalistaDetailView(request, pk):
+    giornalista= Giornalista.objects.get(pk=pk)
+    articoli= Articolo.objects.filter(giornalista=pk)
+    context = {"giornalista":giornalista, "articoli":articoli}
+    return render(request, "news/giornalista_detail.html", context)
     """"
     a = [] 
     g = []
@@ -97,9 +102,22 @@ def queryBase(request):
 
     articoli_mese_anno = Articolo.objects.filter(data__month=1, data__year=2023)
 
-    giornalisti_con_articoli_popolari = Giornalista.objects.filter(articoli_visualizzazioni__gte=100).distinct()
+    giornalisti_con_articoli_popolari = Giornalista.objects.filter(articoli__visualizzazioni__gte=100).distinct()
 
+    data = datetime.date(1990, 1, 1)
+    visualizzazioni = 50
+
+    #vengono selezionati gli articoli di un giornalista nato dopo una certa data e con un minimo di visualizzazione
+    articoli_con_and = Articolo.objects.filter(giornalista__anno_di_nascita__gt=data, visualizzazioni__gte=visualizzazioni)
+
+    from django.db.models import Q
     
+    #vengono selezionati gli articoli dopo una certa data o con un max di visualizzazioni
+    articoli_con_or =Articolo.objects.filter(Q(giornalista__anno_di_nascita__gt=data) | Q(visualizzazioni__lte=visualizzazioni))
+    #vengono esclusi gli articoli dei giornalisti nati dopo una certa data
+    articoli_con_not = Articolo.objects.filter(~Q(giornalista__anno_di_nascita__lt=data))
+    #fa o stesso ma con il metodo exclude
+    articoli_con_not = Articolo.objects.exclude(giornalista__anno_di_nascita__lt=data)
 
     context = {
         'articoli_cognome' : articoli_cognome,
@@ -117,6 +135,11 @@ def queryBase(request):
         'giornalista_anziano' : giornalista_anziano,
         'ultimi' : ultimi,
         'articoli_minime_visualizzazioni' : articoli_minime_visualizzazioni,
-        'articoli_parola' : articoli_parola
+        'articoli_parola' : articoli_parola,
+        'articoli_con_and' : articoli_con_and,
+        'articoli_con_or' : articoli_con_or,
+        'articoli_con_not' : articoli_con_not,
+        'articoli_mese_anno' : articoli_mese_anno,
+        'giornalisti_con_articoli_popolari' : giornalisti_con_articoli_popolari
     }
     return render(request, 'query.html', context)
