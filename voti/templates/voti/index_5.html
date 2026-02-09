@@ -1,0 +1,15 @@
+
+{%extends "base.html"%}
+
+{%block  title%} {{block.super}} | index_5 {%endblock title%}
+
+{%block content%}
+      <ol>
+            <li><a href="{% url 'index_root'%}">Index root</a></li>        
+            <li><a href="{% url 'voti:lista_materie.html'%}"></a>Lista materie (view_a)</li>        
+            <li><a href="{% url 'voti:voti_studenti.html'%}"></a>Voti studenti (view_b)</li>
+            <li><a href="{% url 'voti:media_studenti.html'%}"></a>Media studenti (view_c)</li>   
+            <li><a href="{% url 'voti:max_min_voti.html'%}"></a>Max min voti (view_d)</li>   
+            
+        </ol>
+{%endblock content%}
