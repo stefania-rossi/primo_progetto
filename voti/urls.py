@@ -1,10 +1,10 @@
 from django.urls import path
-from voti.views import voti_studenti,lista_materie,media_studenti,max_min_voti,index_5
-app_name="seconda_app"
+from voti.views import votiStudenti,listaMaterie,mediaStudenti,maxMinVoti,index_5
+app_name="voti"
 urlpatterns=[  
-    path('lista_materie', lista_materie, name = 'lista_materie'),
-    path('voti_studenti', voti_studenti, name='voti_studenti'),
-    path('media_studenti', media_studenti, name='media_studenti'),
-    path('max_min_voti', max_min_voti, name = 'max_min_voti'),
-    path('index_5', index_5, name='index_5')
+    path('lista_materie', listaMaterie, name = 'lista_materie'),
+    path('voti_studenti', votiStudenti, name='voti_studenti'),
+    path('media_studenti', mediaStudenti, name='media_studenti'),
+    path('max_min_voti', maxMinVoti, name = 'max_min_voti'),
+    path('', index_5, name='index_5')
 ]

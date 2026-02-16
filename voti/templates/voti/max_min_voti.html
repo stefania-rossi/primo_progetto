@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+
+{%block title%} {{block.super}} | Max Min voti {%endblock title%}
+{%block content%}
+<h4>Massimo e minimo voti</h4>
+    <i> - Voto massimo: {{ max }}  </i> </br>
+    <i> -  Materie voto massimo: {{ mMax }}  </i> </br>
+    <i> - Studenti voto massimo: {{ sMax }}  </i> </br>
+    <i> - Voto minimo: {{ min }}  </i> </br>
+    <i> - Materie voto minimo: {{ mMin }}  </i> </br>
+    <i> - Studenti voto minimo: {{ sMin }}  </i> </br>
+{%endblock content%}

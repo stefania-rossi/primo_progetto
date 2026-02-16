@@ -49,21 +49,21 @@ def maxMinVoti(request):
     min = 100
     mMin = []
     sMin =  []
-    for studente, voti in voti.items():
-        for materia, voto, assenza in voti:
+    for studente, dati in voti.items():
+        for materia, voto, assenza in dati:
             if voto > max:
                 max = voto
             if voto < min:
                 min = voto
 
-    for studente, voti in voti.items():
-        for materia, voto, assenza in voti:
+    for studente, dati in voti.items():
+        for materia, voto, assenza in dati:
             if voto == max:
-                mMax.append[materia]
-                sMax.append[studente]
+                mMax.append(materia)
+                sMax.append(studente)
             if voto == min:
-                mMin.append[materia]
-                sMin.append[studente]
+                mMin.append(materia)
+                sMin.append(studente)
        
 
     context = {

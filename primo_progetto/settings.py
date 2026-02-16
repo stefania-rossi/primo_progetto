@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'prima_app',
     'seconda_app',
     'prova_pratica_0',
-    'news'
+    'news',
     'voti'
 ]
 
@@ -64,7 +64,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR,'templates'),
                  os.path.join(BASE_DIR,'seconda_app/templates/seconda_app'),
                  os.path.join(BASE_DIR,'news/templates/news'),
-                 os.path.join(BASE_DIR,'voti/templates/voti')]
+                 os.path.join(BASE_DIR,'voti/templates/voti')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
