@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'prima_app',
     'seconda_app',
     'prova_pratica_0',
     'news',
-    'voti'
+    'voti',
+    'forms_app'
 ]
 
 MIDDLEWARE = [
@@ -64,7 +67,8 @@ TEMPLATES = [
                  os.path.join(BASE_DIR,'templates'),
                  os.path.join(BASE_DIR,'seconda_app/templates/seconda_app'),
                  os.path.join(BASE_DIR,'news/templates/news'),
-                 os.path.join(BASE_DIR,'voti/templates/voti')],
+                 os.path.join(BASE_DIR,'voti/templates/voti'),
+                 os.path.join(BASE_DIR,'forms_app/templates/forms_app')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,3 +134,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
